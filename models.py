@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey ,DateTime , DATE ,TIME
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey ,DateTime , DATE ,TIME 
 from database import Base
 from datetime import datetime, timedelta
 
@@ -57,3 +57,19 @@ class Category(Base):
     category_name = Column(String)
 
 
+
+
+
+
+
+# ============================================== Booking form ============================================
+
+class BookingFormModel(Base):
+    __tablename__ = "booking_form"
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    doctor_id = Column(Integer, ForeignKey("doctors.id"))
+    name = Column(String)
+    disease = Column(String)
+    description = Column(String)
+    status = Column(String, default="pending")

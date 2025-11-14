@@ -113,3 +113,20 @@ class CreateCategory(BaseModel):
 class CategoryUpdate(BaseModel):
     category_name: Optional[str]  = None
     
+
+
+class BookingForm(BaseModel):
+    doctor_id: int
+    name: str
+    disease: str
+    description: str
+
+    
+class BookingformResponse(BaseModel):
+    id: int
+    user_id: int
+    name : str
+    doctor_id: int
+    disease: str
+    description: str
+    

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from database import Base, engine
-from routers import auth_router, doctor_router , user_profile ,setting_user_delete_acc ,setting_edit_profile , forget_password ,verify_otp ,reset_password ,create_slot , delete_slot , get_all_doctore_slot , book_slot
+from routers import auth_router, doctor_router , user_profile ,setting_user_delete_acc ,setting_edit_profile , forget_password ,verify_otp ,reset_password ,create_slot , delete_slot , get_all_doctore_slot , book_slot ,bookingform
 from routers.admin_routers import get_all_doctor, get_all_user
 from routers.admin_routers import add_category , update_category ,get_all_category , delete_category , doctor_verification
 
@@ -28,7 +28,7 @@ app.include_router(create_slot.router)
 app.include_router(delete_slot.router)
 app.include_router(get_all_doctore_slot.router)
 app.include_router(book_slot.router)
-
+app.include_router(bookingform.router)
 
 @app.get("/")
 def root():
